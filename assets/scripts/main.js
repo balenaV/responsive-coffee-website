@@ -41,14 +41,42 @@ function scrollHeader(){
 }
 window.addEventListener('scroll', scrollHeader)
 
-/*====== MIXITUP FILTER PRODUCTS ======*/
+/*======  FILTER PRODUCTS ======*/
+  const buttons = document.querySelectorAll('[data-filter]');
+const items = document.querySelectorAll('.products__card');
 
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    const filter = button.dataset.filter;
 
-/* Filtro padrao dos Produtos */ 
+    items.forEach(item => {
+      const category = item.dataset.category;
+      const shouldShow = filter === 'all' || category === filter;
+
+      if (shouldShow) {
+        // Exibe e força repaint antes de remover a classe hide
+        item.style.display = 'block';
+        setTimeout(() => item.classList.remove('hide'), 10);
+      } else {
+        // Aplica a transição
+        item.classList.add('hide');
+        // Aguarda a transição terminar antes de esconder completamente
+        setTimeout(() => item.style.display = 'none', 300);
+      }
+    });
+  });
+});
 
 
 /* Link para ativar os products */ 
+const linkProducts = document.querySelectorAll('.products__item');
 
+function activeProducts() {
+    linkProducts.forEach(l => l.classList.remove('active-product'))
+    this.classList.add('active-product')
+}
+
+linkProducts.forEach(l=>l.addEventListener('click', activeProducts))
 
 /*====== SHOW SCROLL UP ======*/ 
 
