@@ -23,7 +23,7 @@ if(navClose){
     })
 }
 
-/*=============== REMOVE MENU MOBILE ===============*/
+/*====== REMOVE MENU MOBILE ======*/
 const navLink = document.querySelectorAll('.nav__link')
 
 function linkAction(){
@@ -33,14 +33,15 @@ function linkAction(){
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
-/*=============== CHANGE BACKGROUND HEADER ===============*/
+/*====== CHANGE BACKGROUND HEADER ======*/
 function scrollHeader(){
     const header = document.getElementById('header')
-    // Quando o scroll for maior que 50vh, adiciona a classe scrol-header à tag header
-    if(this.scrollY >= 50) header.classList.add('scroll-header');else header.classList.remove('scroll-header');
+    // Quando o scroll for maior que 150vh, adiciona a classe scrol-header à tag header
+    if(this.scrollY >= 150) header.classList.add('scroll-header');else header.classList.remove('scroll-header');
 }
+window.addEventListener('scroll', scrollHeader)
 
-/*=============== MIXITUP FILTER PRODUCTS ===============*/
+/*====== MIXITUP FILTER PRODUCTS ======*/
 
 
 /* Filtro padrao dos Produtos */ 
@@ -49,7 +50,7 @@ function scrollHeader(){
 /* Link para ativar os products */ 
 
 
-/*=============== SHOW SCROLL UP ===============*/ 
+/*====== SHOW SCROLL UP ======*/ 
 
 
-/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+/*====== SCROLL SECTIONS ACTIVE LINK ======*/
