@@ -1125,15 +1125,7 @@ button {
 }
 
 /* Codigo alternativo, para telas maiores */
-@media screen and (min-width:1700px) {
-  .home{
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
 
-  }
-
-}
 
 /*=============== LOAD ===============*/
 
